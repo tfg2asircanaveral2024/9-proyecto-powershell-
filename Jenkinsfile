@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'ubuntu-powershell'
+        PATH = "$PATH:/usr/bin/docker"
     }
 
     stages {
