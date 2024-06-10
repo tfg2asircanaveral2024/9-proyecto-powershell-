@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'ubuntu-powershell:latest'
+        DOCKER_IMAGE = 'ubuntu-powershell'
     }
 
     stages {
