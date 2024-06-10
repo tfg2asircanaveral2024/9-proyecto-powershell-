@@ -9,7 +9,7 @@ pipeline {
         stage('Pull Docker Image') {
             steps {
                 script {
-                    docker.image('ubuntu-powershell:latest').pull()
+                    docker.image('ubuntu-powershell').pull()
                 }
             }
         }
@@ -17,7 +17,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    docker.image('ubuntu-powershell:latest').inside {
+                    docker.image('ubuntu-powershell').inside {
                         sh 'pwsh -Command "Get-Module -ListAvailable"'
                     }
                 }
