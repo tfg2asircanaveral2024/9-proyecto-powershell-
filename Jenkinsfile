@@ -12,7 +12,7 @@ pipeline {
             steps {
                 // Construir la imagen Docker
                 script {
-                    docker.build("-t mi-proyecto-powershell:latest -f Dockerfile .")
+                    docker.build("-t mi-proyecto-powershell -f Dockerfile .")
                 }
             }
         }
