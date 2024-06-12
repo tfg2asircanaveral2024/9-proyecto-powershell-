@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git git branch: 'main', url: 'https://github.com/tfg2asircanaveral2024/9-proyecto-powershell-.git'
+                git branch: 'main', url: 'https://github.com/tfg2asircanaveral2024/9-proyecto-powershell-.git'
             }
         }
 
