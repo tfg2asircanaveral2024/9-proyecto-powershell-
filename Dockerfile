@@ -20,3 +20,5 @@ RUN pwsh -Command "Install-Module -Name PSScriptAnalyzer -Force"
 RUN pwsh -Command "Install-Module -Name PSDepend -Force"
 RUN pwsh -Command "Install-Module -Name Pester -Force"
 RUN pwsh -Command "Install-Module -Name PSDeploy -Force"
+
+CMD ["pwsh"]
