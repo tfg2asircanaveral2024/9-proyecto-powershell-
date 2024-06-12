@@ -1,4 +1,4 @@
-FROM ubuntu-powershell:latest
+FROM ubuntu_powershell:latest
 
 USER root
 
