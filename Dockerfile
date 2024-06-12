@@ -1,4 +1,4 @@
-FROM mi_proyecto_powershell:latest
+FROM mi_pipeline_powershell:latest
 
 USER root
 
