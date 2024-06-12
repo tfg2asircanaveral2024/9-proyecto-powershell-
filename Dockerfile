@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM mi_proyecto_powershell:latest
 
 USER root
 
