@@ -12,7 +12,7 @@ pipeline {
             steps {
                 // Construir la imagen Docker
                 script {
-                    docker.build("-t mi-proyecto-powershell -f Dockerfile .")
+                    def app = docker.build("mi_proyecto_powershell")
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 // Ejecutar un contenedor basado en la imagen construida
                 script {
-                    docker.image("ubuntu_powershell:latest").inside {
+                    docker.image("mi_proyecto_powershell").inside {
                         sh 'pwsh -Command "Get-Module -ListAvailable"'
                     }
                 }
