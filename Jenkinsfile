@@ -4,14 +4,13 @@ pipeline {
     environment {
         DOCKERFILE_PATH = 'Dockerfile' 
         SCRIPT_PATH = 'instalacion.sh' 
-        DOCKER_IMAGE = 'mydockerizada' // Nombre de la imagen Docker personalizada
     }
 
     stages {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("-t ${DOCKER_IMAGE} -f ${DOCKERFILE_PATH} .")
+                    docker.build("-t ubuntu-powershell -f ${DOCKERFILE_PATH} .")
                 }
             }
         }
