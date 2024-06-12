@@ -1,0 +1,14 @@
+version: '3.8'
+
+
+
+services:
+
+  powershell-service:
+
+    image: mi_proyecto_powershell:latest
+
+    container_name: ubuntu-proyecto
+
+    command: pwsh
+
