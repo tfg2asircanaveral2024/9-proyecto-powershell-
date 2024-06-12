@@ -5,7 +5,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("-t ubuntu_powershell:latest -f Dockerfile .")
+                    docker.build("-t ubuntu-powershell:latest -f Dockerfile .")
                 }
             }
         }
@@ -13,7 +13,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    docker.image("ubuntu_powershell:latest").inside {
+                    docker.image("ubuntu-powershell:latest").inside {
                         sh 'pwsh -Command "Get-Module -ListAvailable"'
                     }
                 }
