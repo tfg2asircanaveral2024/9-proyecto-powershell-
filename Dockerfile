@@ -1,4 +1,4 @@
-ROM ubuntu:latest
+FROM ubuntu-powershell:latest
 
 USER root
 
