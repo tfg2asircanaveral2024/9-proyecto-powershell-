@@ -1,4 +1,4 @@
-FROM mi_pipeline_powershell:latest
+FROM ubuntu:latest
 
 USER root
 
