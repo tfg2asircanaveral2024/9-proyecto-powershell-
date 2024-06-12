@@ -10,7 +10,6 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                // Construir la imagen Docker
                 script {
                     def app = docker.build("mi_proyecto_powershell")
                 }
@@ -19,7 +18,6 @@ pipeline {
 
         stage('Run Docker Container') {
             steps {
-                // Ejecutar un contenedor basado en la imagen construida
                 script {
                     docker.image("mi_proyecto_powershell").inside {
                         sh 'pwsh -Command "Get-Module -ListAvailable"'
