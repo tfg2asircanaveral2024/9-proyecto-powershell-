@@ -1,17 +1,11 @@
 pipeline {
     agent any
 
-    environment {
-        DOCKERFILE_PATH = 'Dockerfile' 
-        SCRIPT_PATH = 'instalacion.sh'
-        DOCKER_IMAGE = 'ubuntu_powershell:latest'
-    }
-
     stages {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("-t ${DOCKER_IMAGE} -f ${DOCKERFILE_PATH} .")
+                    docker.build("-t ubuntu_powershell:latest -f Dockerfile .")
                 }
             }
         }
@@ -19,7 +13,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    docker.image("${DOCKER_IMAGE}").inside {
+                    docker.image("ubuntu_powershell:latest").inside {
                         sh 'pwsh -Command "Get-Module -ListAvailable"'
                     }
                 }
