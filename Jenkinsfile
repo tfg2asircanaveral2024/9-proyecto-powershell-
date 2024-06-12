@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKERFILE_PATH = 'Dockerfile' 
         SCRIPT_PATH = 'instalacion.sh' 
-        DOCKER_IMAGE = 'ubuntu-powershell:latest' // Nombre de la imagen Docker personalizada
+        DOCKER_IMAGE = 'mi-imagen-dockerizada:latest' // Nombre de la imagen Docker personalizada
     }
 
     stages {
