@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKERFILE_PATH = 'Dockerfile' 
         SCRIPT_PATH = 'instalacion.sh'
-        DOCKER_IMAGE = 'ubuntu-powershell:latest'
+        DOCKER_IMAGE = 'ubuntu_powershell:latest'
     }
 
     stages {
