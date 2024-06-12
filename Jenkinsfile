@@ -1,17 +1,30 @@
 pipeline {
     agent any
-    
+
     stages {
-        stage('Build Docker Image') {
+        stage('Clone Repository') {
             steps {
                 git 'https://github.com/tfg2asircanaveral2024/9-proyecto-powershell-.git'
-                sh 'docker build -t ubuntu-powershell:latest -f Dockerfile .'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                // Construir la imagen Docker
+                script {
+                    docker.build("-t ubuntu_powershell:latest -f Dockerfile .")
+                }
             }
         }
 
         stage('Run Docker Container') {
             steps {
-                sh 'docker run --rm ubuntu-powershell:latest pwsh -Command "Get-Module -ListAvailable"'
+                // Ejecutar un contenedor basado en la imagen construida
+                script {
+                    docker.image("ubuntu_powershell:latest").inside {
+                        sh 'pwsh -Command "Get-Module -ListAvailable"'
+                    }
+                }
             }
         }
     }
